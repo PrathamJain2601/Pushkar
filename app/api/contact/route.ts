@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const emailData = await resend.emails.send({
-      from: "AyurVeda Naturals <noreply@ayurvedanaturals.com>",
+      from: "AyurVeda Naturals <onboarding@resend.dev>",
       to: ["sehgalpushkar26@gmail.com"],
       subject: `New Contact Form Submission from ${name}`,
       html: `
