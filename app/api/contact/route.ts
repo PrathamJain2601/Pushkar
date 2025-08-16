@@ -2,7 +2,7 @@ import { type NextRequest, NextResponse } from "next/server"
 import { Resend } from "resend"
 
 // Initialize Resend with API key from environment variables
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = new Resend("re_gSh7XoAa_3sv5pHF2DhvrVZbMQkUGj3Kn")
 
 export async function POST(request: NextRequest) {
   try {
@@ -20,18 +20,18 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if Resend API key is configured
-    if (!process.env.RESEND_API_KEY) {
-      console.error("RESEND_API_KEY is not configured")
-      return NextResponse.json(
-        { error: "Email service is not configured. Please contact support directly." },
-        { status: 500 },
-      )
-    }
+    // if (!process.env.RESEND_API_KEY) {
+    //   console.error("RESEND_API_KEY is not configured")
+    //   return NextResponse.json(
+    //     { error: "Email service is not configured. Please contact support directly." },
+    //     { status: 500 },
+    //   )
+    // }
 
     // Send email using Resend
     const emailData = await resend.emails.send({
       from: "AyurVeda Naturals <noreply@ayurvedanaturals.com>",
-      to: [process.env.CONTACT_EMAIL || "info@ayurvedanaturals.com"],
+      to: ["sehgalpushkar26@gmail.com"],
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
